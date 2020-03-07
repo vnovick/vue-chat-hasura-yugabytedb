@@ -1,4 +1,4 @@
-subscription ($selfId: Int ) {
+subscription ($selfId: uuid ) {
     user_typing (
       where: {
         id: {

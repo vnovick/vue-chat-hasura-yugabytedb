@@ -12,8 +12,8 @@ Vue.use(VueApollo);
 const AUTH_TOKEN = "apollo-token";
 
 // Http endpoint
-const httpEndpoint =
-  process.env.VUE_APP_GRAPHQL_HTTP || "https://yugabyte-try.herokuapp.com/v1/graphql";
+const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || "http://localhost:8080/v1/graphql";
+// "https://yugabyte-try.herokuapp.com/v1/graphql";
 
 // Config
 const defaultOptions = {
@@ -21,7 +21,9 @@ const defaultOptions = {
   httpEndpoint,
   // You can use `wss` for secure connection (recommended in production)
   // Use `null` to disable subscriptions
-  wsEndpoint: process.env.VUE_APP_GRAPHQL_WS || "wss://yugabyte-try.herokuapp.com/v1/graphql",
+  wsEndpoint:
+    process.env.VUE_APP_GRAPHQL_WS || "ws://localhost:8080/v1/graphql",
+    // "wss://yugabyte-try.herokuapp.com/v1/graphql",
   // LocalStorage token
   tokenName: AUTH_TOKEN,
   // Enable Automatic Query persisting with Apollo Engine

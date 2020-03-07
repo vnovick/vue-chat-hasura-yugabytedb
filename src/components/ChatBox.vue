@@ -37,7 +37,7 @@ export default {
       loadingKey: "loading",
       variables() {
         return {
-          last_received_id: -1,
+          last_received_id: "11111111-1111-1111-1111-111111111111",
           last_received_ts: "2018-08-21T19:58:46.987552+00:00"
         };
       },

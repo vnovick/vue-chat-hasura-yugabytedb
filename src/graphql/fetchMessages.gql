@@ -1,4 +1,4 @@
-query ($last_received_id: Int, $last_received_ts: timestamptz){
+query ($last_received_id: uuid, $last_received_ts: timestamptz){
     message (
       order_by: {timestamp:asc}
       where: {

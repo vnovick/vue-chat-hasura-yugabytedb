@@ -1,4 +1,4 @@
-mutation ($userId:Int!){
+mutation ($userId:uuid!){
     update_user (
       _set: {
         last_seen: "now()"
