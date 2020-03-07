@@ -1,0 +1,17 @@
+- args:
+    cascade: false
+    read_only: false
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    cascade: false
+    read_only: false
+    sql: CREATE TABLE "public"."message"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+      "text" text NOT NULL, "username" text NOT NULL, "timestamp" timestamptz NOT
+      NULL DEFAULT now(), PRIMARY KEY ("id") , FOREIGN KEY ("username") REFERENCES
+      "public"."user"("username") ON UPDATE restrict ON DELETE restrict);
+  type: run_sql
+- args:
+    name: message
+    schema: public
+  type: add_existing_table_or_view
