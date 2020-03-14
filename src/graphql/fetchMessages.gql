@@ -1,16 +1,6 @@
-query ($last_received_id: uuid, $last_received_ts: timestamptz){
+query fetchMessages {
     message (
       order_by: {timestamp:asc}
-      where: {
-        _and: {
-          id: {
-            _neq: $last_received_id
-          },
-          timestamp: {
-            _gte: $last_received_ts
-          }
-        }
-      }
     ) {
       id
       text

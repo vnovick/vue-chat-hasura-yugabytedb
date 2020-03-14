@@ -31,3 +31,9 @@ export default {
   }
 };
 </script>
+
+<style>
+  .typingIndicator {
+    position: absolute;
+  }
+</style>
